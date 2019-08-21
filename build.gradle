@@ -1,0 +1,89 @@
+buildscript {
+    repositories {
+        mavenCentral()
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+        maven {
+            url "https://oss.sonatype.org/content/repositories/snapshots/"
+        }
+    }
+    dependencies {
+        classpath "biz.aQute.bnd:biz.aQute.bnd.gradle:4.2.0"
+        classpath 'com.vanniktech:gradle-maven-publish-plugin:0.8.0'
+        classpath "gradle.plugin.com.hierynomus.gradle.plugins:license-gradle-plugin:0.15.0"
+    }
+}
+
+apply plugin: 'java'
+
+apply plugin: 'jacoco'
+jacoco {
+    toolVersion = "0.8.5-SNAPSHOT" //"0.8.4"
+}
+
+build.dependsOn jacocoTestReport
+
+check.dependsOn jacocoTestReport
+
+
+group = "com.github.akarnokd"
+
+sourceCompatibility = 6
+targetCompatibility = 6
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://oss.sonatype.org/content/repositories/snapshots/"
+    }
+}
+
+dependencies {
+    implementation "io.reactivex.rxjava2:rxjava:2.2.11"
+    implementation "io.reactivex.rxjava3:rxjava:3.0.0-RC2"
+    testImplementation 'junit:junit:4.12'
+}
+
+
+apply plugin: 'maven'
+
+apply plugin: 'biz.aQute.bnd.builder'
+
+jar {
+    bnd ('Bundle-Name': 'rxjava3-bridge',
+            'Bundle-Vendor': 'akarnokd',
+            'Bundle-Description': 'Bridge library between RxJava 2 and RxJava 3',
+            'Import-Package': '!org.junit,!junit.framework,!org.mockito.*,*',
+            'Bundle-DocURL': 'https://github.com/akarnokd/RxJavaBridge')
+}
+
+apply plugin: "com.vanniktech.maven.publish"
+
+test {
+    maxHeapSize = "1g"
+    testLogging  {
+        events "started", "failed", "standard_error" // "skipped", "passed"
+        exceptionFormat="full"
+        //    showStandardStreams = true
+    }
+    jacoco.includes = ["**akarnokd**"]
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+}
+
+jacocoTestReport.dependsOn test
+
+apply plugin: "com.github.hierynomus.license"
+
+license {
+    header rootProject.file('HEADER')
+    skipExistingHeaders true
+    ignoreFailures true
+    excludes(["**/*.md", "**/*.txt"])
+}
