@@ -26,6 +26,15 @@ build.dependsOn jacocoTestReport
 
 check.dependsOn jacocoTestReport
 
+javadoc {
+    failOnError = false
+    
+    options.links(
+        "http://docs.oracle.com/javase/7/docs/api/",
+        "http://reactivex.io/RxJava/2.x/javadoc", 
+        "http://reactivex.io/RxJava/3.x/javadoc"
+    )
+}
 
 group = "com.github.akarnokd"
 
