@@ -21,7 +21,7 @@ implements io.reactivex.MaybeConverter<T, io.reactivex.rxjava3.core.Maybe<T>> {
 
     final io.reactivex.Maybe<T> source;
 
-    static final MaybeV2toV3<Object> CONVERTER = new MaybeV2toV3<Object>(null);
+    static final MaybeV2toV3<Object> CONVERTER = new MaybeV2toV3<>(null);
 
     MaybeV2toV3(io.reactivex.Maybe<T> source) {
         this.source = source;
@@ -34,7 +34,7 @@ implements io.reactivex.MaybeConverter<T, io.reactivex.rxjava3.core.Maybe<T>> {
 
     @Override
     public io.reactivex.rxjava3.core.Maybe<T> apply(io.reactivex.Maybe<T> upstream) {
-        return new MaybeV2toV3<T>(upstream);
+        return new MaybeV2toV3<>(upstream);
     }
 
     static final class MaybeObserverV3toV2<T>

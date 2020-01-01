@@ -21,7 +21,7 @@ implements io.reactivex.rxjava3.core.FlowableConverter<T, io.reactivex.Flowable<
 
     final io.reactivex.rxjava3.core.Flowable<T> source;
 
-    static final FlowableV3toV2<Object> CONVERTER = new FlowableV3toV2<Object>(null);
+    static final FlowableV3toV2<Object> CONVERTER = new FlowableV3toV2<>(null);
 
     FlowableV3toV2(io.reactivex.rxjava3.core.Flowable<T> source) {
         this.source = source;
@@ -34,6 +34,6 @@ implements io.reactivex.rxjava3.core.FlowableConverter<T, io.reactivex.Flowable<
 
     @Override
     public io.reactivex.Flowable<T> apply(io.reactivex.rxjava3.core.Flowable<T> upstream) {
-        return new FlowableV3toV2<T>(upstream);
+        return new FlowableV3toV2<>(upstream);
     }
 }

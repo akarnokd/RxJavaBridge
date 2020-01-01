@@ -37,8 +37,8 @@ public final class RxJavaBridge {
      * @return the wrapper V2 Flowable
      */
     public static <T> io.reactivex.Flowable<T> toV2Flowable(io.reactivex.rxjava3.core.Flowable<T> source) {
-        io.reactivex.rxjava3.internal.functions.ObjectHelper.requireNonNull(source, "source is null");
-        return io.reactivex.plugins.RxJavaPlugins.onAssembly(new FlowableV3toV2<T>(source));
+        java.util.Objects.requireNonNull(source, "source is null");
+        return io.reactivex.plugins.RxJavaPlugins.onAssembly(new FlowableV3toV2<>(source));
     }
 
     /**
@@ -48,8 +48,8 @@ public final class RxJavaBridge {
      * @return the wrapper V3 Flowable
      */
     public static <T> io.reactivex.rxjava3.core.Flowable<T> toV3Flowable(io.reactivex.Flowable<T> source) {
-        io.reactivex.rxjava3.internal.functions.ObjectHelper.requireNonNull(source, "source is null");
-        return io.reactivex.rxjava3.plugins.RxJavaPlugins.onAssembly(new FlowableV2toV3<T>(source));
+        java.util.Objects.requireNonNull(source, "source is null");
+        return io.reactivex.rxjava3.plugins.RxJavaPlugins.onAssembly(new FlowableV2toV3<>(source));
     }
 
     /**
@@ -87,8 +87,8 @@ public final class RxJavaBridge {
      * @return the wrapper V2 Observable
      */
     public static <T> io.reactivex.Observable<T> toV2Observable(io.reactivex.rxjava3.core.Observable<T> source) {
-        io.reactivex.rxjava3.internal.functions.ObjectHelper.requireNonNull(source, "source is null");
-        return io.reactivex.plugins.RxJavaPlugins.onAssembly(new ObservableV3toV2<T>(source));
+        java.util.Objects.requireNonNull(source, "source is null");
+        return io.reactivex.plugins.RxJavaPlugins.onAssembly(new ObservableV3toV2<>(source));
     }
 
     /**
@@ -98,8 +98,8 @@ public final class RxJavaBridge {
      * @return the wrapper V3 Observable
      */
     public static <T> io.reactivex.rxjava3.core.Observable<T> toV3Observable(io.reactivex.Observable<T> source) {
-        io.reactivex.rxjava3.internal.functions.ObjectHelper.requireNonNull(source, "source is null");
-        return io.reactivex.rxjava3.plugins.RxJavaPlugins.onAssembly(new ObservableV2toV3<T>(source));
+        java.util.Objects.requireNonNull(source, "source is null");
+        return io.reactivex.rxjava3.plugins.RxJavaPlugins.onAssembly(new ObservableV2toV3<>(source));
     }
 
     /**
@@ -137,8 +137,8 @@ public final class RxJavaBridge {
      * @return the wrapper V2 Maybe
      */
     public static <T> io.reactivex.Maybe<T> toV2Maybe(io.reactivex.rxjava3.core.Maybe<T> source) {
-        io.reactivex.rxjava3.internal.functions.ObjectHelper.requireNonNull(source, "source is null");
-        return io.reactivex.plugins.RxJavaPlugins.onAssembly(new MaybeV3toV2<T>(source));
+        java.util.Objects.requireNonNull(source, "source is null");
+        return io.reactivex.plugins.RxJavaPlugins.onAssembly(new MaybeV3toV2<>(source));
     }
 
     /**
@@ -148,8 +148,8 @@ public final class RxJavaBridge {
      * @return the wrapper V3 Maybe
      */
     public static <T> io.reactivex.rxjava3.core.Maybe<T> toV3Maybe(io.reactivex.Maybe<T> source) {
-        io.reactivex.rxjava3.internal.functions.ObjectHelper.requireNonNull(source, "source is null");
-        return io.reactivex.rxjava3.plugins.RxJavaPlugins.onAssembly(new MaybeV2toV3<T>(source));
+        java.util.Objects.requireNonNull(source, "source is null");
+        return io.reactivex.rxjava3.plugins.RxJavaPlugins.onAssembly(new MaybeV2toV3<>(source));
     }
 
     /**
@@ -187,8 +187,8 @@ public final class RxJavaBridge {
      * @return the wrapper V2 Single
      */
     public static <T> io.reactivex.Single<T> toV2Single(io.reactivex.rxjava3.core.Single<T> source) {
-        io.reactivex.rxjava3.internal.functions.ObjectHelper.requireNonNull(source, "source is null");
-        return io.reactivex.plugins.RxJavaPlugins.onAssembly(new SingleV3toV2<T>(source));
+        java.util.Objects.requireNonNull(source, "source is null");
+        return io.reactivex.plugins.RxJavaPlugins.onAssembly(new SingleV3toV2<>(source));
     }
 
     /**
@@ -198,8 +198,8 @@ public final class RxJavaBridge {
      * @return the wrapper V3 Single
      */
     public static <T> io.reactivex.rxjava3.core.Single<T> toV3Single(io.reactivex.Single<T> source) {
-        io.reactivex.rxjava3.internal.functions.ObjectHelper.requireNonNull(source, "source is null");
-        return io.reactivex.rxjava3.plugins.RxJavaPlugins.onAssembly(new SingleV2toV3<T>(source));
+        java.util.Objects.requireNonNull(source, "source is null");
+        return io.reactivex.rxjava3.plugins.RxJavaPlugins.onAssembly(new SingleV2toV3<>(source));
     }
 
     /**
@@ -236,7 +236,7 @@ public final class RxJavaBridge {
      * @return the wrapper V2 Completable
      */
     public static io.reactivex.Completable toV2Completable(io.reactivex.rxjava3.core.Completable source) {
-        io.reactivex.rxjava3.internal.functions.ObjectHelper.requireNonNull(source, "source is null");
+        java.util.Objects.requireNonNull(source, "source is null");
         return io.reactivex.plugins.RxJavaPlugins.onAssembly(new CompletableV3toV2(source));
     }
 
@@ -246,7 +246,7 @@ public final class RxJavaBridge {
      * @return the wrapper V3 Completable
      */
     public static io.reactivex.rxjava3.core.Completable toV3Completable(io.reactivex.Completable source) {
-        io.reactivex.rxjava3.internal.functions.ObjectHelper.requireNonNull(source, "source is null");
+        java.util.Objects.requireNonNull(source, "source is null");
         return io.reactivex.rxjava3.plugins.RxJavaPlugins.onAssembly(new CompletableV2toV3(source));
     }
 
@@ -280,7 +280,7 @@ public final class RxJavaBridge {
      * @return the wrapper V2 Disposable
      */
     public static io.reactivex.disposables.Disposable toV2Disposable(io.reactivex.rxjava3.disposables.Disposable disposable) {
-        io.reactivex.rxjava3.internal.functions.ObjectHelper.requireNonNull(disposable, "disposable is null");
+        java.util.Objects.requireNonNull(disposable, "disposable is null");
         return DisposableV3toV2.wrap(disposable);
     }
 
@@ -290,7 +290,7 @@ public final class RxJavaBridge {
      * @return the wrapper V3 Disposable
      */
     public static io.reactivex.rxjava3.disposables.Disposable toV3Disposable(io.reactivex.disposables.Disposable disposable) {
-        io.reactivex.rxjava3.internal.functions.ObjectHelper.requireNonNull(disposable, "disposable is null");
+        java.util.Objects.requireNonNull(disposable, "disposable is null");
         return DisposableV2toV3.wrap(disposable);
     }
 
@@ -304,7 +304,7 @@ public final class RxJavaBridge {
      * @return the wrapper V2 Scheduler
      */
     public static io.reactivex.Scheduler toV2Scheduler(io.reactivex.rxjava3.core.Scheduler scheduler) {
-        io.reactivex.rxjava3.internal.functions.ObjectHelper.requireNonNull(scheduler, "scheduler is null");
+        java.util.Objects.requireNonNull(scheduler, "scheduler is null");
         return new SchedulerV3toV2(scheduler);
     }
 
@@ -314,7 +314,7 @@ public final class RxJavaBridge {
      * @return the wrapper V3 Scheduler
      */
     public static io.reactivex.rxjava3.core.Scheduler toV3Scheduler(io.reactivex.Scheduler scheduler) {
-        io.reactivex.rxjava3.internal.functions.ObjectHelper.requireNonNull(scheduler, "scheduler is null");
+        java.util.Objects.requireNonNull(scheduler, "scheduler is null");
         return new SchedulerV2toV3(scheduler);
     }
 

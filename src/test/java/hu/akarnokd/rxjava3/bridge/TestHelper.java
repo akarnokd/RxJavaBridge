@@ -63,7 +63,7 @@ public final class TestHelper {
         final int ncpu = Runtime.getRuntime().availableProcessors();
 
         final CountDownLatch cdl = new CountDownLatch(ncpu);
-        final List<Scheduler.Worker> workers = new ArrayList<Scheduler.Worker>();
+        final List<Scheduler.Worker> workers = new ArrayList<>();
         final Runnable task = new Runnable() {
             @Override
             public void run() {

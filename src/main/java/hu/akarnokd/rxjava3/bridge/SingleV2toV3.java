@@ -21,7 +21,7 @@ implements io.reactivex.SingleConverter<T, io.reactivex.rxjava3.core.Single<T>> 
 
     final io.reactivex.Single<T> source;
 
-    static final SingleV2toV3<Object> CONVERTER = new SingleV2toV3<Object>(null);
+    static final SingleV2toV3<Object> CONVERTER = new SingleV2toV3<>(null);
 
     SingleV2toV3(io.reactivex.Single<T> source) {
         this.source = source;
@@ -34,7 +34,7 @@ implements io.reactivex.SingleConverter<T, io.reactivex.rxjava3.core.Single<T>> 
 
     @Override
     public io.reactivex.rxjava3.core.Single<T> apply(io.reactivex.Single<T> upstream) {
-        return new SingleV2toV3<T>(upstream);
+        return new SingleV2toV3<>(upstream);
     }
 
     static final class SingleObserverV3toV2<T>

@@ -38,8 +38,8 @@ javadoc {
 
 group = "com.github.akarnokd"
 
-sourceCompatibility = 6
-targetCompatibility = 6
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
 
 repositories {
     mavenCentral()
@@ -50,7 +50,7 @@ repositories {
 
 dependencies {
     implementation "io.reactivex.rxjava2:rxjava:2.2.16"
-    implementation "io.reactivex.rxjava3:rxjava:3.0.0-RC6"
+    implementation "io.reactivex.rxjava3:rxjava:3.0.0-RC7"
     testImplementation 'junit:junit:4.12'
 }
 

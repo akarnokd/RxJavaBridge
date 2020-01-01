@@ -514,7 +514,7 @@ public class RxJavaBridgeTest {
 
     @Test
     public void disposableV3toV2() {
-        io.reactivex.rxjava3.disposables.Disposable empty = io.reactivex.rxjava3.disposables.Disposables.empty();
+        io.reactivex.rxjava3.disposables.Disposable empty = io.reactivex.rxjava3.disposables.Disposable.empty();
         io.reactivex.disposables.Disposable disposable = RxJavaBridge.toV2Disposable(empty);
 
         assertFalse(disposable.isDisposed());

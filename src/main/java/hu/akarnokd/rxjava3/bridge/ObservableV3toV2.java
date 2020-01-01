@@ -21,7 +21,7 @@ implements io.reactivex.rxjava3.core.ObservableConverter<T, io.reactivex.Observa
 
     final io.reactivex.rxjava3.core.Observable<T> source;
 
-    static final ObservableV3toV2<Object> CONVERTER = new ObservableV3toV2<Object>(null);
+    static final ObservableV3toV2<Object> CONVERTER = new ObservableV3toV2<>(null);
 
     ObservableV3toV2(io.reactivex.rxjava3.core.Observable<T> source) {
         this.source = source;
@@ -34,7 +34,7 @@ implements io.reactivex.rxjava3.core.ObservableConverter<T, io.reactivex.Observa
 
     @Override
     public io.reactivex.Observable<T> apply(io.reactivex.rxjava3.core.Observable<T> upstream) {
-        return new ObservableV3toV2<T>(upstream);
+        return new ObservableV3toV2<>(upstream);
     }
 
     static final class ObserverV2toV3<T>
