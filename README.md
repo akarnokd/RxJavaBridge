@@ -13,7 +13,7 @@ RxJava 3: [![Maven Central](https://maven-badges.herokuapp.com/maven-central/io.
 ```groovy
 
 dependencies {
-    implementation "com.github.akarnokd:rxjava3-bridge:3.0.0-RC6"
+    implementation "com.github.akarnokd:rxjava3-bridge:3.0.0-RC7"
 }
 ```
 
