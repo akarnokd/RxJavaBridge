@@ -51,7 +51,7 @@ repositories {
 dependencies {
     implementation "io.reactivex.rxjava2:rxjava:2.2.16"
     implementation "io.reactivex.rxjava3:rxjava:3.0.0-RC7"
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13'
 }
 
 
