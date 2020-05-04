@@ -1,5 +1,5 @@
 # RxJavaBridge
-Bridge between RxJava 2 and RxJava 3
+Bridge between RxJava 2 and RxJava 3.
 
 <a href='https://travis-ci.org/akarnokd/RxJavaBridge/builds'><img src='https://travis-ci.org/akarnokd/RxJavaBridge.svg?branch=master'></a>
 [![codecov.io](http://codecov.io/github/akarnokd/RxJavaBridge/coverage.svg?branch=master)](http://codecov.io/github/akarnokd/RxJavaBridge?branch=master)
