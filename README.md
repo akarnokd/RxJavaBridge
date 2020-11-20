@@ -1,7 +1,7 @@
 # RxJavaBridge
 Bridge between RxJava 2 and RxJava 3.
 
-<a href='https://travis-ci.com/akarnokd/RxJavaBridge/builds'><img src='https://travis-ci.com/akarnokd/RxJavaBridge.svg?branch=master'></a>
+![Build](https://github.com/akarnokd/RxJavaBridge/workflows/Java%20CI%20with%20Gradle/badge.svg)
 [![codecov.io](http://codecov.io/github/akarnokd/RxJavaBridge/coverage.svg?branch=master)](http://codecov.io/github/akarnokd/RxJavaBridge?branch=master)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.akarnokd/rxjava3-bridge/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.akarnokd/rxjava3-bridge)
 
