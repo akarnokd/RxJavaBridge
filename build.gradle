@@ -62,7 +62,10 @@ jar {
             'Bundle-Vendor': 'akarnokd',
             'Bundle-Description': 'Bridge library between RxJava 2 and RxJava 3',
             'Import-Package': '!org.junit,!junit.framework,!org.mockito.*,*',
-            'Bundle-DocURL': 'https://github.com/akarnokd/RxJavaBridge')
+            'Bundle-DocURL': 'https://github.com/akarnokd/RxJavaBridge',
+            'Export-Package': 'hu.akarnokd.rxjava3.bridge',
+            "Bundle-SymbolicName": "hu.akarnokd.rxjava3.bridge",
+        )
 }
 
 apply plugin: "com.vanniktech.maven.publish"
