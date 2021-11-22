@@ -501,7 +501,7 @@ public class RxJavaBridgeTest {
         io.reactivex.disposables.Disposable empty = io.reactivex.internal.disposables.DisposableHelper.DISPOSED;
         io.reactivex.rxjava3.disposables.Disposable disposable = RxJavaBridge.toV3Disposable(empty);
 
-        assertSame(disposable, io.reactivex.rxjava3.internal.disposables.DisposableHelper.DISPOSED);
+        assertSame(disposable, io.reactivex.rxjava3.disposables.Disposable.disposed());
     }
 
     @Test
@@ -509,7 +509,7 @@ public class RxJavaBridgeTest {
         io.reactivex.disposables.Disposable empty = io.reactivex.internal.disposables.EmptyDisposable.INSTANCE;
         io.reactivex.rxjava3.disposables.Disposable disposable = RxJavaBridge.toV3Disposable(empty);
 
-        assertSame(disposable, io.reactivex.rxjava3.internal.disposables.EmptyDisposable.INSTANCE);
+        assertSame(disposable, io.reactivex.rxjava3.disposables.Disposable.disposed());
     }
 
     @Test
@@ -531,7 +531,7 @@ public class RxJavaBridgeTest {
         io.reactivex.rxjava3.disposables.Disposable empty = io.reactivex.rxjava3.internal.disposables.DisposableHelper.DISPOSED;
         io.reactivex.disposables.Disposable disposable = RxJavaBridge.toV2Disposable(empty);
 
-        assertSame(disposable, io.reactivex.internal.disposables.DisposableHelper.DISPOSED);
+        assertSame(disposable, io.reactivex.disposables.Disposables.disposed());
     }
 
     @Test
@@ -539,7 +539,7 @@ public class RxJavaBridgeTest {
         io.reactivex.rxjava3.disposables.Disposable empty = io.reactivex.rxjava3.internal.disposables.EmptyDisposable.INSTANCE;
         io.reactivex.disposables.Disposable disposable = RxJavaBridge.toV2Disposable(empty);
 
-        assertSame(disposable, io.reactivex.internal.disposables.EmptyDisposable.INSTANCE);
+        assertSame(disposable, io.reactivex.disposables.Disposables.disposed());
     }
 
     // -----------------------------------------------------------

@@ -35,11 +35,8 @@ final class DisposableV2toV3 implements io.reactivex.rxjava3.disposables.Disposa
     }
 
     static io.reactivex.rxjava3.disposables.Disposable wrap(io.reactivex.disposables.Disposable disposable) {
-        if (disposable == io.reactivex.internal.disposables.DisposableHelper.DISPOSED) {
-            return io.reactivex.rxjava3.internal.disposables.DisposableHelper.DISPOSED;
-        }
-        if (disposable == io.reactivex.internal.disposables.EmptyDisposable.INSTANCE) {
-            return io.reactivex.rxjava3.internal.disposables.EmptyDisposable.INSTANCE;
+        if (disposable.isDisposed()) {
+            return io.reactivex.rxjava3.disposables.Disposable.disposed();
         }
         return new DisposableV2toV3(disposable);
     }
